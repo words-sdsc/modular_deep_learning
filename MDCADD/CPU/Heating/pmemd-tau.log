@@ -1,0 +1,517 @@
+host: comet-11-37
+
+==================================================================================================
+mpiexec options:
+----------------
+  Base path: /opt/mvapich2/gnu/ib/bin/
+  Launcher: (null)
+  Debug level: 1
+  Enable X: -1
+
+  Global environment:
+  -------------------
+    PAPI_BASE=/opt/papi/intel
+    SLURM_CHECKPOINT_IMAGE_DIR=/home/kkew
+    MKLROOT=/opt/intel/composer_xe_2013_sp1.2.144/mkl
+    SLURM_JOB_NAME=pmemd-tau
+    PDSHROOT=/opt/pdsh
+    MANPATH=/opt/intel/composer_xe_2013_sp1.2.144/man/en_US:/opt/intel/composer_xe_2013_sp1.2.144/man/en_US:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64/share/man/:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/share/man/:/usr/share/man
+    AMBERHOME_GPU=/share/apps/gpu/amber
+    TAUHOME=/opt/tau/intel/mvapich2_ib
+    SLURMD_NODENAME=comet-11-37
+    SLURM_TOPOLOGY_ADDR=R24.R11.comet-11-37
+    HOSTNAME=comet-11-37
+    SLURM_PRIO_PROCESS=0
+    SLURM_NODE_ALIASES=(null)
+    INTEL_LICENSE_FILE=/opt/intel/composer_xe_2013_sp1.2.144/licenses:/opt/intel/licenses:/root/intel/licenses
+    IPPROOT=/opt/intel/composer_xe_2013_sp1.2.144/ipp
+    SHELL=/bin/bash
+    TERM=xterm
+    AMBERHOME_CPU=/opt/amber/bin
+    HISTSIZE=1000
+    PDT_BASE=/opt/pdt/intel
+    TMPDIR=/tmp
+    SLURM_TOPOLOGY_ADDR_PATTERN=switch.switch.node
+    SSH_CLIENT=169.228.113.103 64739 22
+    GDBSERVER_MIC=/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/target/mic/bin/gdbserver
+    LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/../compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/intel64/gcc4.4
+    FPATH=/opt/intel/composer_xe_2013_sp1.2.144/mkl/include
+    QTDIR=/usr/lib64/qt-3.3
+    QTINC=/usr/lib64/qt-3.3/include
+    HDF5HOME=/opt/hdf5/gnu/mvapich2_ib
+    SSH_TTY=/dev/pts/155
+    ROCKSROOT=/opt/rocks/share/devel
+    MIC_LD_LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/mpirt/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/mic
+    ANT_HOME=/opt/rocks
+    USER=kkew
+    TAU_BASE=/opt/tau/intel/mvapich2_ib
+    LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+    LD_LIBRARY_PATH=/opt/hdf5/gnu/mvapich2_ib/lib:/opt/nco/gnu/mvapich2_ib/lib:/opt/netcdf/4.3.2/gnu/mvapich2_ib/lib:/opt/fftw/3.3.4/gnu/mvapich2_ib/lib:/opt/mvapich2/gnu/ib/lib:/opt/amber/lib:/opt/pdt/intel/x86_64/lib:/opt/papi/intel/lib:/opt/tau/intel/mvapich2_ib/x86_64/lib:/opt/python/lib:/opt/gnu/gcc/lib64:/opt/gnu/gmp/lib:/opt/gnu/mpfr/lib:/opt/gnu/mpc/lib:/opt/gnu/lib:/opt/gnu/lib64:/opt/mvapich2/intel/ib/lib:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mpirt/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/../compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/intel64/gcc4.4:/opt/sdsc/lib
+    ROCKS_ROOT=/opt/rocks
+    MIC_LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/mpirt/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/mic
+    MKLHOME=/opt/intel/composer_xe_2013_sp1.2.144/mkl
+    CPATH=/opt/intel/composer_xe_2013_sp1.2.144/ipp/include:/opt/intel/composer_xe_2013_sp1.2.144/mkl/include:/opt/intel/composer_xe_2013_sp1.2.144/tbb/include
+    LIBPATH=/opt/hdf5/gnu/mvapich2_ib/lib:/opt/nco/gnu/mvapich2_ib/lib:/opt/netcdf/4.3.2/gnu/mvapich2_ib/lib:/opt/fftw/3.3.4/gnu/mvapich2_ib/lib:/opt/python/lib
+    PYTHONROOT=/opt/python
+    NLSPATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64/locale/%l_%t/%N:/opt/intel/composer_xe_2013_sp1.2.144/ipp/lib/intel64/locale/%l_%t/%N:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/intel64/locale/%l_%t/%N:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/share/locale/%l_%t/%N:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64/share/locale/%l_%t/%N
+    GNUTOOLSHOME=/opt/gnu
+    PATH=/opt/hdf5/gnu/mvapich2_ib/bin:/opt/nco/gnu/mvapich2_ib/bin:/opt/netcdf/4.3.2/gnu/mvapich2_ib/bin:/opt/fftw/3.3.4/gnu/mvapich2_ib/bin:/opt/mvapich2/gnu/ib/bin:/opt/scipy/2.7/bin:/opt/amber/bin:/opt/pdt/intel/x86_64/bin:/opt/papi/intel/bin:/opt/tau/intel/mvapich2_ib/x86_64/bin:/opt/python/bin:/opt/gnu/gcc/bin:/opt/gnu/bin:/opt/mvapich2/intel/ib/bin:/opt/intel/composer_xe_2013_sp1.2.144/bin/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mpirt/bin/intel64:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/ibutils/bin:/usr/java/latest/bin:/opt/pdsh/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/sdsc/bin:/opt/sdsc/sbin:/home/kkew/bin
+    MAIL=/var/spool/mail/kkew
+    MV2_ALLTOALL_TUNING=2
+    SLURM_JOB_ID=16368364
+    SDSCDEVEL=/opt/sdsc/devel
+    TBBROOT=/opt/intel/composer_xe_2013_sp1.2.144/tbb
+    SLURM_JOB_USER=kkew
+    PWD=/home/kkew/pmemd_profiles
+    CUDA_VISIBLE_DEVICES=NoDevFiles
+    JAVA_HOME=/usr/java/latest
+    _LMFILES_=/opt/modulefiles/compilers/intel/2013_sp1.2.144:/opt/modulefiles/mpi/.intel/mvapich2_ib/2.1:/opt/modulefiles/applications/gnutools/2.69:/opt/modulefiles/applications/mkl/11.1.2.144:/opt/modulefiles/compilers/python/2.7.10:/opt/modulefiles/applications/.intel/papi/5.4.1:/opt/modulefiles/applications/.intel/pdt/3.20:/opt/modulefiles/applications/.intel/tau/2.23:/opt/modulefiles/applications/scipy/2.7:/opt/modulefiles/compilers/gnu/4.9.2:/opt/modulefiles/mpi/.gnu/mvapich2_ib/2.1:/opt/modulefiles/applications/.gnu/fftw/3.3.4:/opt/modulefiles/applications/.gnu/hdf5/1.8.14:/opt/modulefiles/applications/.gnu/netcdf/4.3.2:/opt/modulefiles/applications/amber/16
+    NETCDFHOME=/opt/netcdf/4.3.2/gnu/mvapich2_ib
+    LANG=en_US.iso885915
+    GDB_CROSS=/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/bin/gdb-mic
+    PDTHOME=/opt/pdt/intel/x86_64
+    MODULEPATH=/opt/modulefiles/mpi:/opt/modulefiles/compilers:/opt/modulefiles/applications:/opt/modulefiles/applications/.gnu:/opt/modulefiles/mpi/.gnu:/opt/modulefiles/mpi/.intel:/opt/modulefiles/applications/.intel:/opt/modulefiles/mpi:/opt/modulefiles/compilers:/opt/modulefiles/applications:/usr/share/Modules/modulefiles:/etc/modulefiles
+    SLURM_JOB_UID=518417
+    LOADEDMODULES=intel/2013_sp1.2.144:mvapich2_ib/2.1:gnutools/2.69:mkl/11.1.2.144:python/2.7.10:papi/5.4.1:pdt/3.20:tau/2.23:scipy/2.7:gnu/4.9.2:fftw/3.3.4:hdf5/1.8.14:netcdf/4.3.2:amber/16
+    SLURM_SUBMIT_DIR=/home/kkew
+    SLURM_TASK_PID=18162
+    LM_LICENSE_FILE=/opt/flexlm/license/license.dat
+    ENVIRONMENT=BATCH
+    KRB5CCNAME=FILE:/tmp/krb5cc_518417_oNTgY8
+    HISTCONTROL=ignoredups
+    MPM_LAUNCHER=/opt/intel/composer_xe_2013_sp1.2.144/debugger/mpm/bin/start_mpm.sh
+    SLURM_JOB_NODELIST=comet-11-37
+    INTEL_PYTHONHOME=/opt/intel/composer_xe_2013_sp1.2.144/debugger/python/intel64/
+    PAPIHOME=/opt/papi/intel
+    HOME=/home/kkew
+    SHLVL=2
+    GCCHOME=/opt/gnu
+    SLURM_JOB_CPUS_PER_NODE=24
+    SLURM_CLUSTER_NAME=comet
+    ROLLSROOT=/opt/rocks/share/devel/src/roll
+    SLURM_GTIDS=0
+    SLURM_SUBMIT_HOST=comet-ln2.sdsc.edu
+    MPIHOME=/opt/mvapich2/gnu/ib
+    FFTWHOME=/opt/fftw/3.3.4/gnu/mvapich2_ib
+    SLURM_JOB_PARTITION=compute
+    SDSCHOME=/opt/sdsc
+    LOGNAME=kkew
+    PYTHONPATH=/opt/hdf5/gnu/mvapich2_ib/lib/python2.7/site-packages:/opt/scipy/2.7/lib/python2.7/site-packages:/opt/amber/lib/python2.7/site-packages:/opt/sdsc/lib:/opt/sdsc/lib/python2.6/site-packages
+    CVS_RSH=ssh
+    QTLIB=/usr/lib64/qt-3.3/lib
+    GPU_DEVICE_ORDINAL=NoDevFiles
+    SSH_CONNECTION=169.228.113.103 64739 198.202.113.253 22
+    SLURM_JOB_NUM_NODES=1
+    MODULESHOME=/usr/share/Modules
+    LESSOPEN=||/usr/bin/lesspipe.sh %s
+    MKL_ROOT=/opt/intel/composer_xe_2013_sp1.2.144/mkl
+    NCOHOME=/opt/nco/gnu/mvapich2_ib
+    INFOPATH=/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64/share/info/:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/share/info/
+    TAU_LINKER_OPT17=-lmpl
+    AMBERHOME=/opt/amber
+    INCLUDE=/opt/intel/composer_xe_2013_sp1.2.144/mkl/include
+    INTELHOME=/opt/intel/composer_xe_2013_sp1.2.144
+    SLURM_MEM_PER_NODE=122880
+    G_BROKEN_FILENAMES=1
+    BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd sh $*`
+}
+    _=/opt/mvapich2/gnu/ib/bin/mpirun
+
+  Hydra internal environment:
+  ---------------------------
+    GFORTRAN_UNBUFFERED_PRECONNECTED=y
+
+
+    Proxy information:
+    *********************
+      [1] proxy: comet-11-37 (24 cores)
+      Exec list: tau_exec (8 processes); 
+
+
+==================================================================================================
+
+[mpiexec@comet-11-37.sdsc.edu] Timeout set to -1 (-1 means infinite)
+[mpiexec@comet-11-37.sdsc.edu] Got a control port string of comet-11-37:41196
+
+Proxy launch args: /opt/mvapich2/gnu/ib/bin/hydra_pmi_proxy --control-port comet-11-37:41196 --debug --rmk slurm --launcher slurm --demux poll --pgid 0 --retries 10 --usize -2 --proxy-id 
+
+Arguments being passed to proxy 0:
+--version 3.1.4 --iface-ip-env-name MPIR_CVAR_CH3_INTERFACE_HOSTNAME --hostname comet-11-37 --global-core-map 0,24,24 --pmi-id-map 0,0 --global-process-count 8 --auto-cleanup 1 --pmi-kvsname kvs_18193_0 --pmi-process-mapping (vector,(0,1,24)) --ckpoint-num -1 --global-inherited-env 105 'PAPI_BASE=/opt/papi/intel' 'SLURM_CHECKPOINT_IMAGE_DIR=/home/kkew' 'MKLROOT=/opt/intel/composer_xe_2013_sp1.2.144/mkl' 'SLURM_JOB_NAME=pmemd-tau' 'PDSHROOT=/opt/pdsh' 'MANPATH=/opt/intel/composer_xe_2013_sp1.2.144/man/en_US:/opt/intel/composer_xe_2013_sp1.2.144/man/en_US:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64/share/man/:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/share/man/:/usr/share/man' 'AMBERHOME_GPU=/share/apps/gpu/amber' 'TAUHOME=/opt/tau/intel/mvapich2_ib' 'SLURMD_NODENAME=comet-11-37' 'SLURM_TOPOLOGY_ADDR=R24.R11.comet-11-37' 'HOSTNAME=comet-11-37' 'SLURM_PRIO_PROCESS=0' 'SLURM_NODE_ALIASES=(null)' 'INTEL_LICENSE_FILE=/opt/intel/composer_xe_2013_sp1.2.144/licenses:/opt/intel/licenses:/root/intel/licenses' 'IPPROOT=/opt/intel/composer_xe_2013_sp1.2.144/ipp' 'SHELL=/bin/bash' 'TERM=xterm' 'AMBERHOME_CPU=/opt/amber/bin' 'HISTSIZE=1000' 'PDT_BASE=/opt/pdt/intel' 'TMPDIR=/tmp' 'SLURM_TOPOLOGY_ADDR_PATTERN=switch.switch.node' 'SSH_CLIENT=169.228.113.103 64739 22' 'GDBSERVER_MIC=/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/target/mic/bin/gdbserver' 'LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/../compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/intel64/gcc4.4' 'FPATH=/opt/intel/composer_xe_2013_sp1.2.144/mkl/include' 'QTDIR=/usr/lib64/qt-3.3' 'QTINC=/usr/lib64/qt-3.3/include' 'HDF5HOME=/opt/hdf5/gnu/mvapich2_ib' 'SSH_TTY=/dev/pts/155' 'ROCKSROOT=/opt/rocks/share/devel' 'MIC_LD_LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/mpirt/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/mic' 'ANT_HOME=/opt/rocks' 'USER=kkew' 'TAU_BASE=/opt/tau/intel/mvapich2_ib' 'LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:' 'LD_LIBRARY_PATH=/opt/hdf5/gnu/mvapich2_ib/lib:/opt/nco/gnu/mvapich2_ib/lib:/opt/netcdf/4.3.2/gnu/mvapich2_ib/lib:/opt/fftw/3.3.4/gnu/mvapich2_ib/lib:/opt/mvapich2/gnu/ib/lib:/opt/amber/lib:/opt/pdt/intel/x86_64/lib:/opt/papi/intel/lib:/opt/tau/intel/mvapich2_ib/x86_64/lib:/opt/python/lib:/opt/gnu/gcc/lib64:/opt/gnu/gmp/lib:/opt/gnu/mpfr/lib:/opt/gnu/mpc/lib:/opt/gnu/lib:/opt/gnu/lib64:/opt/mvapich2/intel/ib/lib:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mpirt/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/../compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/intel64/gcc4.4:/opt/sdsc/lib' 'ROCKS_ROOT=/opt/rocks' 'MIC_LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/mpirt/lib/mic:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/mic' 'MKLHOME=/opt/intel/composer_xe_2013_sp1.2.144/mkl' 'CPATH=/opt/intel/composer_xe_2013_sp1.2.144/ipp/include:/opt/intel/composer_xe_2013_sp1.2.144/mkl/include:/opt/intel/composer_xe_2013_sp1.2.144/tbb/include' 'LIBPATH=/opt/hdf5/gnu/mvapich2_ib/lib:/opt/nco/gnu/mvapich2_ib/lib:/opt/netcdf/4.3.2/gnu/mvapich2_ib/lib:/opt/fftw/3.3.4/gnu/mvapich2_ib/lib:/opt/python/lib' 'PYTHONROOT=/opt/python' 'NLSPATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64/locale/%l_%t/%N:/opt/intel/composer_xe_2013_sp1.2.144/ipp/lib/intel64/locale/%l_%t/%N:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/intel64/locale/%l_%t/%N:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/share/locale/%l_%t/%N:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64/share/locale/%l_%t/%N' 'GNUTOOLSHOME=/opt/gnu' 'PATH=/opt/hdf5/gnu/mvapich2_ib/bin:/opt/nco/gnu/mvapich2_ib/bin:/opt/netcdf/4.3.2/gnu/mvapich2_ib/bin:/opt/fftw/3.3.4/gnu/mvapich2_ib/bin:/opt/mvapich2/gnu/ib/bin:/opt/scipy/2.7/bin:/opt/amber/bin:/opt/pdt/intel/x86_64/bin:/opt/papi/intel/bin:/opt/tau/intel/mvapich2_ib/x86_64/bin:/opt/python/bin:/opt/gnu/gcc/bin:/opt/gnu/bin:/opt/mvapich2/intel/ib/bin:/opt/intel/composer_xe_2013_sp1.2.144/bin/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mpirt/bin/intel64:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/ibutils/bin:/usr/java/latest/bin:/opt/pdsh/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/sdsc/bin:/opt/sdsc/sbin:/home/kkew/bin' 'MAIL=/var/spool/mail/kkew' 'MV2_ALLTOALL_TUNING=2' 'SLURM_JOB_ID=16368364' 'SDSCDEVEL=/opt/sdsc/devel' 'TBBROOT=/opt/intel/composer_xe_2013_sp1.2.144/tbb' 'SLURM_JOB_USER=kkew' 'PWD=/home/kkew/pmemd_profiles' 'CUDA_VISIBLE_DEVICES=NoDevFiles' 'JAVA_HOME=/usr/java/latest' '_LMFILES_=/opt/modulefiles/compilers/intel/2013_sp1.2.144:/opt/modulefiles/mpi/.intel/mvapich2_ib/2.1:/opt/modulefiles/applications/gnutools/2.69:/opt/modulefiles/applications/mkl/11.1.2.144:/opt/modulefiles/compilers/python/2.7.10:/opt/modulefiles/applications/.intel/papi/5.4.1:/opt/modulefiles/applications/.intel/pdt/3.20:/opt/modulefiles/applications/.intel/tau/2.23:/opt/modulefiles/applications/scipy/2.7:/opt/modulefiles/compilers/gnu/4.9.2:/opt/modulefiles/mpi/.gnu/mvapich2_ib/2.1:/opt/modulefiles/applications/.gnu/fftw/3.3.4:/opt/modulefiles/applications/.gnu/hdf5/1.8.14:/opt/modulefiles/applications/.gnu/netcdf/4.3.2:/opt/modulefiles/applications/amber/16' 'NETCDFHOME=/opt/netcdf/4.3.2/gnu/mvapich2_ib' 'LANG=en_US.iso885915' 'GDB_CROSS=/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/bin/gdb-mic' 'PDTHOME=/opt/pdt/intel/x86_64' 'MODULEPATH=/opt/modulefiles/mpi:/opt/modulefiles/compilers:/opt/modulefiles/applications:/opt/modulefiles/applications/.gnu:/opt/modulefiles/mpi/.gnu:/opt/modulefiles/mpi/.intel:/opt/modulefiles/applications/.intel:/opt/modulefiles/mpi:/opt/modulefiles/compilers:/opt/modulefiles/applications:/usr/share/Modules/modulefiles:/etc/modulefiles' 'SLURM_JOB_UID=518417' 'LOADEDMODULES=intel/2013_sp1.2.144:mvapich2_ib/2.1:gnutools/2.69:mkl/11.1.2.144:python/2.7.10:papi/5.4.1:pdt/3.20:tau/2.23:scipy/2.7:gnu/4.9.2:fftw/3.3.4:hdf5/1.8.14:netcdf/4.3.2:amber/16' 'SLURM_SUBMIT_DIR=/home/kkew' 'SLURM_TASK_PID=18162' 'LM_LICENSE_FILE=/opt/flexlm/license/license.dat' 'ENVIRONMENT=BATCH' 'KRB5CCNAME=FILE:/tmp/krb5cc_518417_oNTgY8' 'HISTCONTROL=ignoredups' 'MPM_LAUNCHER=/opt/intel/composer_xe_2013_sp1.2.144/debugger/mpm/bin/start_mpm.sh' 'SLURM_JOB_NODELIST=comet-11-37' 'INTEL_PYTHONHOME=/opt/intel/composer_xe_2013_sp1.2.144/debugger/python/intel64/' 'PAPIHOME=/opt/papi/intel' 'HOME=/home/kkew' 'SHLVL=2' 'GCCHOME=/opt/gnu' 'SLURM_JOB_CPUS_PER_NODE=24' 'SLURM_CLUSTER_NAME=comet' 'ROLLSROOT=/opt/rocks/share/devel/src/roll' 'SLURM_GTIDS=0' 'SLURM_SUBMIT_HOST=comet-ln2.sdsc.edu' 'MPIHOME=/opt/mvapich2/gnu/ib' 'FFTWHOME=/opt/fftw/3.3.4/gnu/mvapich2_ib' 'SLURM_JOB_PARTITION=compute' 'SDSCHOME=/opt/sdsc' 'LOGNAME=kkew' 'PYTHONPATH=/opt/hdf5/gnu/mvapich2_ib/lib/python2.7/site-packages:/opt/scipy/2.7/lib/python2.7/site-packages:/opt/amber/lib/python2.7/site-packages:/opt/sdsc/lib:/opt/sdsc/lib/python2.6/site-packages' 'CVS_RSH=ssh' 'QTLIB=/usr/lib64/qt-3.3/lib' 'GPU_DEVICE_ORDINAL=NoDevFiles' 'SSH_CONNECTION=169.228.113.103 64739 198.202.113.253 22' 'SLURM_JOB_NUM_NODES=1' 'MODULESHOME=/usr/share/Modules' 'LESSOPEN=||/usr/bin/lesspipe.sh %s' 'MKL_ROOT=/opt/intel/composer_xe_2013_sp1.2.144/mkl' 'NCOHOME=/opt/nco/gnu/mvapich2_ib' 'INFOPATH=/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64/share/info/:/opt/intel/composer_xe_2013_sp1.2.144/debugger/gdb/intel64_mic/share/info/' 'TAU_LINKER_OPT17=-lmpl' 'AMBERHOME=/opt/amber' 'INCLUDE=/opt/intel/composer_xe_2013_sp1.2.144/mkl/include' 'INTELHOME=/opt/intel/composer_xe_2013_sp1.2.144' 'SLURM_MEM_PER_NODE=122880' 'G_BROKEN_FILENAMES=1' 'BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd sh $*`
+}' '_=/opt/mvapich2/gnu/ib/bin/mpirun' --global-user-env 0 --global-system-env 1 'GFORTRAN_UNBUFFERED_PRECONNECTED=y' --proxy-core-count 24 --exec --exec-appnum 0 --exec-proc-count 8 --exec-local-env 0 --exec-wdir /home/kkew/pmemd_profiles --exec-args 15 tau_exec /opt/amber/bin/pmemd.MPI -O -i /home/kkew/MD_TEST/confDir/min1_switch.conf -o /home/kkew/MD_TEST/r175h_stictic/min1.out -p /home/kkew/MD_TEST/r175h_stictic/r175h_stictic.top -c /home/kkew/MD_TEST/r175h_stictic/r175h_stictic.crd -r /home/kkew/MD_TEST/r175h_stictic/min1.rst -ref /home/kkew/MD_TEST/r175h_stictic/r175h_stictic.crd 
+
+[mpiexec@comet-11-37.sdsc.edu] Launch arguments: /usr/bin/srun -N 1 -n 1 /opt/mvapich2/gnu/ib/bin/hydra_pmi_proxy --control-port comet-11-37:41196 --debug --rmk slurm --launcher slurm --demux poll --pgid 0 --retries 10 --usize -2 --proxy-id -1 
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): init
+pmi_version=1 pmi_subversion=1 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=response_to_init pmi_version=1 pmi_subversion=1 rc=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): init
+pmi_version=1 pmi_subversion=1 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=response_to_init pmi_version=1 pmi_subversion=1 rc=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): init
+pmi_version=1 pmi_subversion=1 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=response_to_init pmi_version=1 pmi_subversion=1 rc=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): init
+pmi_version=1 pmi_subversion=1 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=response_to_init pmi_version=1 pmi_subversion=1 rc=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): init
+pmi_version=1 pmi_subversion=1 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=response_to_init pmi_version=1 pmi_subversion=1 rc=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): init
+pmi_version=1 pmi_subversion=1 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=response_to_init pmi_version=1 pmi_subversion=1 rc=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): init
+pmi_version=1 pmi_subversion=1 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=response_to_init pmi_version=1 pmi_subversion=1 rc=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): init
+pmi_version=1 pmi_subversion=1 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=response_to_init pmi_version=1 pmi_subversion=1 rc=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get_maxes
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=maxes kvsname_max=256 keylen_max=64 vallen_max=1024
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get_maxes
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=maxes kvsname_max=256 keylen_max=64 vallen_max=1024
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get_maxes
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=maxes kvsname_max=256 keylen_max=64 vallen_max=1024
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get_maxes
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=maxes kvsname_max=256 keylen_max=64 vallen_max=1024
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get_maxes
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=maxes kvsname_max=256 keylen_max=64 vallen_max=1024
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get_maxes
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=maxes kvsname_max=256 keylen_max=64 vallen_max=1024
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get_maxes
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=maxes kvsname_max=256 keylen_max=64 vallen_max=1024
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get_appnum
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=appnum appnum=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get_appnum
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=appnum appnum=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get_appnum
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=appnum appnum=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get_appnum
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=appnum appnum=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get_appnum
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=appnum appnum=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get_maxes
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=maxes kvsname_max=256 keylen_max=64 vallen_max=1024
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get_appnum
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=appnum appnum=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get_appnum
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=appnum appnum=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get_appnum
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=appnum appnum=0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): put
+kvsname=kvs_18193_0 key=hostname[1] value=-892945808 
+[proxy:0:0@comet-11-37.sdsc.edu] cached command: hostname[1]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=put_result rc=0 msg=success
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): put
+kvsname=kvs_18193_0 key=hostname[2] value=-892945808 
+[proxy:0:0@comet-11-37.sdsc.edu] cached command: hostname[2]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=put_result rc=0 msg=success
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): barrier_in
+
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): barrier_in
+
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): put
+kvsname=kvs_18193_0 key=hostname[3] value=-892945808 
+[proxy:0:0@comet-11-37.sdsc.edu] cached command: hostname[3]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=put_result rc=0 msg=success
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): put
+kvsname=kvs_18193_0 key=hostname[4] value=-892945808 
+[proxy:0:0@comet-11-37.sdsc.edu] cached command: hostname[4]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=put_result rc=0 msg=success
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): put
+kvsname=kvs_18193_0 key=hostname[5] value=-892945808 
+[proxy:0:0@comet-11-37.sdsc.edu] cached command: hostname[5]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=put_result rc=0 msg=success
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): put
+kvsname=kvs_18193_0 key=hostname[0] value=-892945808 
+[proxy:0:0@comet-11-37.sdsc.edu] cached command: hostname[0]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=put_result rc=0 msg=success
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): barrier_in
+
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): barrier_in
+
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): barrier_in
+
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): barrier_in
+
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get_my_kvsname
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=my_kvsname kvsname=kvs_18193_0
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): put
+kvsname=kvs_18193_0 key=hostname[6] value=-892945808 
+[proxy:0:0@comet-11-37.sdsc.edu] cached command: hostname[6]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=put_result rc=0 msg=success
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): put
+kvsname=kvs_18193_0 key=hostname[7] value=-892945808 
+[proxy:0:0@comet-11-37.sdsc.edu] cached command: hostname[7]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=put_result rc=0 msg=success
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): barrier_in
+
+[mpiexec@comet-11-37.sdsc.edu] [pgid: 0] got PMI command: cmd=put hostname[1]=-892945808 hostname[2]=-892945808 hostname[3]=-892945808 hostname[4]=-892945808 hostname[5]=-892945808 hostname[0]=-892945808 hostname[6]=-892945808 hostname[7]=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): barrier_in
+
+[proxy:0:0@comet-11-37.sdsc.edu] flushing 8 put command(s) out
+[proxy:0:0@comet-11-37.sdsc.edu] forwarding command (cmd=put hostname[1]=-892945808 hostname[2]=-892945808 hostname[3]=-892945808 hostname[4]=-892945808 hostname[5]=-892945808 hostname[0]=-892945808 hostname[6]=-892945808 hostname[7]=-892945808) upstream
+[proxy:0:0@comet-11-37.sdsc.edu] forwarding command (cmd=barrier_in) upstream
+[mpiexec@comet-11-37.sdsc.edu] [pgid: 0] got PMI command: cmd=barrier_in
+[mpiexec@comet-11-37.sdsc.edu] PMI response to fd 7 pid 25: cmd=keyval_cache hostname[1]=-892945808 hostname[2]=-892945808 hostname[3]=-892945808 hostname[4]=-892945808 hostname[5]=-892945808 hostname[0]=-892945808 hostname[6]=-892945808 hostname[7]=-892945808 
+[mpiexec@comet-11-37.sdsc.edu] PMI response to fd 7 pid 25: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=barrier_out
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get
+kvsname=kvs_18193_0 key=hostname[1] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get
+kvsname=kvs_18193_0 key=hostname[0] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get
+kvsname=kvs_18193_0 key=hostname[0] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get
+kvsname=kvs_18193_0 key=hostname[2] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get
+kvsname=kvs_18193_0 key=hostname[2] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get
+kvsname=kvs_18193_0 key=hostname[0] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get
+kvsname=kvs_18193_0 key=hostname[0] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get
+kvsname=kvs_18193_0 key=hostname[0] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get
+kvsname=kvs_18193_0 key=hostname[0] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get
+kvsname=kvs_18193_0 key=hostname[0] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get
+kvsname=kvs_18193_0 key=hostname[3] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get
+kvsname=kvs_18193_0 key=hostname[3] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get
+kvsname=kvs_18193_0 key=hostname[1] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get
+kvsname=kvs_18193_0 key=hostname[1] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get
+kvsname=kvs_18193_0 key=hostname[1] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get
+kvsname=kvs_18193_0 key=hostname[1] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get
+kvsname=kvs_18193_0 key=hostname[1] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get
+kvsname=kvs_18193_0 key=hostname[4] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get
+kvsname=kvs_18193_0 key=hostname[4] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get
+kvsname=kvs_18193_0 key=hostname[3] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get
+kvsname=kvs_18193_0 key=hostname[2] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get
+kvsname=kvs_18193_0 key=hostname[2] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get
+kvsname=kvs_18193_0 key=hostname[2] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get
+kvsname=kvs_18193_0 key=hostname[1] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get
+kvsname=kvs_18193_0 key=hostname[5] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get
+kvsname=kvs_18193_0 key=hostname[5] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get
+kvsname=kvs_18193_0 key=hostname[4] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get
+kvsname=kvs_18193_0 key=hostname[4] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get
+kvsname=kvs_18193_0 key=hostname[3] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get
+kvsname=kvs_18193_0 key=hostname[3] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get
+kvsname=kvs_18193_0 key=hostname[2] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get
+kvsname=kvs_18193_0 key=hostname[6] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get
+kvsname=kvs_18193_0 key=hostname[6] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get
+kvsname=kvs_18193_0 key=hostname[5] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get
+kvsname=kvs_18193_0 key=hostname[5] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get
+kvsname=kvs_18193_0 key=hostname[5] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get
+kvsname=kvs_18193_0 key=hostname[4] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get
+kvsname=kvs_18193_0 key=hostname[2] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): get
+kvsname=kvs_18193_0 key=hostname[7] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): get
+kvsname=kvs_18193_0 key=hostname[7] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get
+kvsname=kvs_18193_0 key=hostname[6] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get
+kvsname=kvs_18193_0 key=hostname[6] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get
+kvsname=kvs_18193_0 key=hostname[6] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get
+kvsname=kvs_18193_0 key=hostname[3] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): get
+kvsname=kvs_18193_0 key=hostname[7] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): get
+kvsname=kvs_18193_0 key=hostname[7] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): get
+kvsname=kvs_18193_0 key=hostname[7] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get
+kvsname=kvs_18193_0 key=hostname[6] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get
+kvsname=kvs_18193_0 key=hostname[3] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): get
+kvsname=kvs_18193_0 key=hostname[7] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get
+kvsname=kvs_18193_0 key=hostname[4] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get
+kvsname=kvs_18193_0 key=hostname[4] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get
+kvsname=kvs_18193_0 key=hostname[5] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get
+kvsname=kvs_18193_0 key=hostname[5] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): get
+kvsname=kvs_18193_0 key=hostname[7] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): get
+kvsname=kvs_18193_0 key=hostname[6] 
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=get_result rc=0 msg=success value=-892945808
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 4): finalize
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=finalize_ack
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 5): finalize
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=finalize_ack
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 6): finalize
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=finalize_ack
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 9): finalize
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=finalize_ack
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 13): finalize
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=finalize_ack
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 17): finalize
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=finalize_ack
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 21): finalize
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=finalize_ack
+[proxy:0:0@comet-11-37.sdsc.edu] got pmi command (from 25): finalize
+
+[proxy:0:0@comet-11-37.sdsc.edu] PMI response: cmd=finalize_ack
