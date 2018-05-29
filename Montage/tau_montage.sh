@@ -1,6 +1,5 @@
 #!/bin/bash
-# Mosaic of M17, K band, 1.5 deg x 1.5 deg
-# Bruce Berriman, February, 2016
+# tau profile Montage
 
 module load tau
 module load pdt
