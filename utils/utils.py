@@ -42,7 +42,16 @@ def parse_profiles(profiles):
                     print('[LOG] skipping line: ' + str(i))
                     continue
             dfs.append(pd.DataFrame(data,columns=header))
-        profile_dataframes.append((metadata,dfs)) 
+            reduced_dfs = pd.DataFrame()
+            for df in dfs:
+                if 'Name' in list(df):
+                    reduced_df = df[df['Name']==".TAU application"]
+                elif 'eventname' in list(df):
+                    reduced_df = df[df['eventname']=='Increase in Heap Memory (KB)']
+                else:
+                    continue
+                reduced_dfs = pd.concat([reduced_dfs.reset_index(drop=True),reduced_df.reset_index(drop=True)],axis=1)
+        profile_dataframes.append((metadata,reduced_dfs)) 
     if len(profile_dataframes) > 1:
         return profile_dataframes
     else:
