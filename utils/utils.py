@@ -48,6 +48,15 @@ def parse_profiles(profiles):
                     reduced_df = df[df['Name']==".TAU application"]
                 elif 'eventname' in list(df):
                     reduced_df = df[df['eventname']=='Increase in Heap Memory (KB)']
+                    #reduced_df = pd.concat([reduced_df,df[df['eventname']=='Bytes Read'], df[df['eventname']=='Bytes Written'], df[df['eventname']=='Read Bandwidth (MB/s)'], df[df['eventname']=='Write Bandwidth (MB/s)']], axis=0)
+                    print('btes read')
+                    print(df[df['eventname']=='Bytes Read'])
+                    print('btes written')
+                    print(df[df['eventname']=='Bytes Written'])
+                    print('btes read bandiwdth')
+                    print(df[df['eventname']=='Read Bandwidth (MB/s)'])
+                    print('btes write bandwidth')
+                    print(df[df['eventname']=='Write Bandwidth (MB/s)'])
                 else:
                     continue
                 reduced_dfs = pd.concat([reduced_dfs.reset_index(drop=True),reduced_df.reset_index(drop=True)],axis=1)

@@ -1,0 +1,109 @@
+9 templated_functions_MULTI_PAPI_L1_DCM
+# Name Calls Subrs Excl Incl ProfileCalls # <metadata><attribute><name>Metric Name</name><value>PAPI_L1_DCM</value></attribute><attribute><name>CPU Cores</name><value>12</value></attribute><attribute><name>CPU MHz</name><value>2501.000</value></attribute><attribute><name>CPU Type</name><value>Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz</value></attribute><attribute><name>CPU Vendor</name><value>GenuineIntel</value></attribute><attribute><name>CWD</name><value>/home/siyu/workflows/archived</value></attribute><attribute><name>Cache Size</name><value>30720 KB</value></attribute><attribute><name>Command Line</name><value>mMakeHdr Kimages.tbl Ktemplate.hdr</value></attribute><attribute><name>Executable</name><value>/home/siyu/workflows/Montage-dev/bin/mMakeHdr</value></attribute><attribute><name>Hostname</name><value>comet-ln2.sdsc.edu</value></attribute><attribute><name>Local Time</name><value>2018-06-01T14:10:50-07:00</value></attribute><attribute><name>Memory Size</name><value>65864032 kB</value></attribute><attribute><name>Node Name</name><value>comet-ln2.sdsc.edu</value></attribute><attribute><name>OS Machine</name><value>x86_64</value></attribute><attribute><name>OS Name</name><value>Linux</value></attribute><attribute><name>OS Release</name><value>2.6.32-696.18.7.el6.x86_64</value></attribute><attribute><name>OS Version</name><value>#1 SMP Thu Jan 4 17:31:22 UTC 2018</value></attribute><attribute><name>Starting Timestamp</name><value>1527887450831276</value></attribute><attribute><name>TAU Architecture</name><value>default</value></attribute><attribute><name>TAU Config</name><value> -cc=icc -c++=icpc -fortran=intel -prefix=/opt/tau/intel/mvapich2_ib -iowrapper -pdt=/opt/pdt/intel -mpi -mpiinc=/opt/mvapich2/intel/ib/include -mpilib=/opt/mvapich2/intel/ib/lib -papi=/opt/papi/intel</value></attribute><attribute><name>TAU Makefile</name><value></value></attribute><attribute><name>TAU Version</name><value>2.23.0</value></attribute><attribute><name>TAU_BFD_LOOKUP</name><value>on</value></attribute><attribute><name>TAU_CALLPATH</name><value>off</value></attribute><attribute><name>TAU_CALLPATH_DEPTH</name><value>2</value></attribute><attribute><name>TAU_CALLSITE_LIMIT</name><value>1</value></attribute><attribute><name>TAU_COMM_MATRIX</name><value>off</value></attribute><attribute><name>TAU_COMPENSATE</name><value>off</value></attribute><attribute><name>TAU_CUPTI_API</name><value>runtime</value></attribute><attribute><name>TAU_EBS_KEEP_UNRESOLVED_ADDR</name><value>off</value></attribute><attribute><name>TAU_IBM_BG_HWP_COUNTERS</name><value>off</value></attribute><attribute><name>TAU_MAX_THREADS</name><value>1</value></attribute><attribute><name>TAU_MEMDBG_PROTECT_ABOVE</name><value>off</value></attribute><attribute><name>TAU_MEMDBG_PROTECT_BELOW</name><value>off</value></attribute><attribute><name>TAU_MEMDBG_PROTECT_FREE</name><value>off</value></attribute><attribute><name>TAU_OPENMP_RUNTIME</name><value>on</value></attribute><attribute><name>TAU_OPENMP_RUNTIME_EVENTS</name><value>on</value></attribute><attribute><name>TAU_OPENMP_RUNTIME_STATES</name><value>off</value></attribute><attribute><name>TAU_PROFILE</name><value>on</value></attribute><attribute><name>TAU_PROFILE_FORMAT</name><value>profile</value></attribute><attribute><name>TAU_SAMPLING</name><value>off</value></attribute><attribute><name>TAU_SIGNALS_GDB</name><value>off</value></attribute><attribute><name>TAU_THROTTLE</name><value>on</value></attribute><attribute><name>TAU_THROTTLE_NUMCALLS</name><value>100000</value></attribute><attribute><name>TAU_THROTTLE_PERCALL</name><value>10</value></attribute><attribute><name>TAU_TRACE</name><value>off</value></attribute><attribute><name>TAU_TRACK_CUDA_CDP</name><value>off</value></attribute><attribute><name>TAU_TRACK_CUDA_INSTRUCTIONS</name><value></value></attribute><attribute><name>TAU_TRACK_HEADROOM</name><value>off</value></attribute><attribute><name>TAU_TRACK_HEAP</name><value>on</value></attribute><attribute><name>TAU_TRACK_IO_PARAMS</name><value>off</value></attribute><attribute><name>TAU_TRACK_MEMORY_LEAKS</name><value>on</value></attribute><attribute><name>TAU_TRACK_MESSAGE</name><value>off</value></attribute><attribute><name>TAU_TRACK_SIGNALS</name><value>off</value></attribute><attribute><name>Timestamp</name><value>1527887450850424</value></attribute><attribute><name>UTC Time</name><value>2018-06-01T21:10:50Z</value></attribute><attribute><name>pid</name><value>8310</value></attribute><attribute><name>username</name><value>siyu</value></attribute></metadata>
+".TAU application" 1 6569 1277720 1858147 0 GROUP="TAU_USER" 
+"fopen64()  " 4 4 3410 4150 0 GROUP="TAU_IO" 
+"void * malloc(size_t) C" 1198 0 120247 120247 0 GROUP="TAU_USER" 
+"fseek()  " 2 0 817 817 0 GROUP="TAU_IO" 
+"void free(void*) C" 3153 0 248773 248773 0 GROUP="TAU_USER" 
+"fclose()  " 4 4 3883 4632 0 GROUP="TAU_IO" 
+"void * calloc(size_t, size_t) C" 2199 0 198976 198976 0 GROUP="TAU_USER" 
+"fwrite()  " 6 0 1492 1492 0 GROUP="TAU_IO" 
+"fprintf()  " 11 0 2829 2829 0 GROUP="TAU_IO" 
+0 aggregates
+95 userevents
+# eventname numevents max min mean sumsqr
+"Heap Memory Used (KB) at Entry" 6578 67425.7529296875 0.5546875 58823.24827594705 25938057955023.62
+"Heap Memory Used (KB) at Entry : .TAU application" 1 784.4375 784.4375 784.4375 615342.19140625
+"Write Bandwidth (MB/s) <file=stdout>" 1 14.44444444444444 14.44444444444444 14.44444444444444 208.641975308642
+"Bytes Written <file=stdout>" 1 390 390 390 152100
+"Write Bandwidth (MB/s)" 9 25 1.714285714285714 15.68430335097002 2749.080750818846
+"Bytes Written" 17 390 4 40.8235294117647 158532
+"Heap Memory Used (KB) at Entry : .TAU application => fopen64()  " 4 67163.5546875 268.04296875 33880.1318359375 9022814322.445328
+"Heap Memory Used (KB) at Entry : fopen64()   => void * malloc(size_t) C" 4 67163.5546875 268.04296875 33880.4794921875 9022816898.078384
+"Heap Memory Used (KB) at Exit" 6578 67425.7529296875 0.5546875 58823.03064903846 25938056710359.35
+"Heap Memory Used (KB) at Exit : fopen64()   => void * malloc(size_t) C" 4 67163.5546875 268.04296875 33880.6982421875 9022818520.683853
+"Increase in Heap Memory (KB)" 4 0.875 0.5546875 0.634765625 1.68865966796875
+"Increase in Heap Memory (KB) : fopen64()   => void * malloc(size_t) C" 1 0.875 0.875 0.875 0.765625
+"Heap Allocate" 3397 67174400 4 40581.82278481012 9024815752127476
+"Heap Allocate : .TAU application => fopen64()  " 4 568 568 568 1290496
+"Heap Memory Used (KB)" 6550 67425.76171875 0.5546875 59052.97963889551 25929069366955.38
+"Write Bandwidth (MB/s) <file=Ktemplate.hdr>" 8 25 1.714285714285714 15.83928571428572 2540.438775510204
+"Bytes Written <file=Ktemplate.hdr>" 16 25 4 19 6432
+"Heap Memory Used (KB) at Exit : .TAU application => fopen64()  " 4 67164.109375 0.5546875 33649.3427734375 9022107321.282547
+"[GROUP=MIN_MARKER] Heap Memory Used (KB) at Exit" 1 0.5546875 0.5546875 0.5546875 0.30767822265625
+"[GROUP=MIN_MARKER] Heap Memory Used (KB) at Exit : .TAU application => fopen64()  " 1 0.5546875 0.5546875 0.5546875 0.30767822265625
+"Decrease in Heap Memory (KB)" 6 924.8203125 0.5546875 239.0148111979167 1112393.34555912
+"Decrease in Heap Memory (KB) : .TAU application => fopen64()  " 1 924.8203125 924.8203125 924.8203125 855292.6104125977
+"Heap Memory Used (KB) at Entry : .TAU application => void * malloc(size_t) C" 1194 67425.7294921875 0.5546875 58845.85316883898 4679609095756.688
+"[GROUP=MIN_MARKER] Heap Memory Used (KB) at Entry" 1 0.5546875 0.5546875 0.5546875 0.30767822265625
+"[GROUP=MIN_MARKER] Heap Memory Used (KB) at Entry : .TAU application => void * malloc(size_t) C" 1 0.5546875 0.5546875 0.5546875 0.30767822265625
+"Heap Memory Used (KB) at Exit : .TAU application => void * malloc(size_t) C" 1194 67425.7294921875 0.5546875 58845.85316883898 4679609095756.688
+"Heap Allocate : .TAU application" 3393 67174400 4 40628.99498968464 9024815750836980
+"[GROUP=MAX_MARKER] Heap Allocate" 2 67174400 4096 33589248 4512400032137216
+"[GROUP=MAX_MARKER] Heap Allocate : .TAU application" 2 67174400 4096 33589248 4512400032137216
+"[GROUP=MAX_MARKER] Heap Memory Used (KB)" 3 65624.5546875 4.5546875 21879.22135416667 4306582271.860535
+"[GROUP=MAX_MARKER] Heap Memory Used (KB) : .TAU application" 3 65624.5546875 4.5546875 21879.22135416667 4306582271.860535
+"[GROUP=MAX_MARKER] Heap Allocate : .TAU application" 1 67174400 67174400 67174400 4512400015360000
+"[GROUP=MAX_MARKER] Heap Allocate : .TAU application : .TAU application" 1 67174400 67174400 67174400 4512400015360000
+"[GROUP=MAX_MARKER] Heap Memory Used (KB) at Entry" 1 65624.5546875 65624.5546875 65624.5546875 4306582177.932678
+"[GROUP=MAX_MARKER] Heap Memory Used (KB) at Entry : .TAU application => void * malloc(size_t) C" 1 65624.5546875 65624.5546875 65624.5546875 4306582177.932678
+"[GROUP=MAX_MARKER] Heap Memory Used (KB) at Exit" 1 65624.5546875 65624.5546875 65624.5546875 4306582177.932678
+"[GROUP=MAX_MARKER] Heap Memory Used (KB) at Exit : .TAU application => void * malloc(size_t) C" 1 65624.5546875 65624.5546875 65624.5546875 4306582177.932678
+"[GROUP=MIN_MARKER] Heap Allocate : .TAU application" 2 1024 7 515.5 1048625
+"[GROUP=MIN_MARKER] Heap Allocate : .TAU application : .TAU application" 2 1024 7 515.5 1048625
+"Increase in Heap Memory (KB) : .TAU application => fopen64()  " 3 0.5546875 0.5546875 0.5546875 0.92303466796875
+"Heap Memory Used (KB) at Entry : .TAU application => fseek()  " 2 67164.109375 67164.109375 67164.109375 9022035176.273926
+"Heap Memory Used (KB) at Exit : .TAU application => fseek()  " 2 67164.109375 67164.109375 67164.109375 9022035176.273926
+"Heap Free" 3153 67174400 4 43632.22549952426 9024813128396880
+"Heap Free : .TAU application" 3149 67174400 4 43686.92759606224 9024813127106384
+"Heap Memory Used (KB) at Entry : .TAU application => void free(void*) C" 3149 67425.7529296875 1.109375 59119.92867093224 12480925968295.1
+"Heap Memory Used (KB) at Exit : .TAU application => void free(void*) C" 3149 67425.7529296875 1.109375 59119.92867093224 12480925968295.1
+"[GROUP=MIN_MARKER] Heap Free : .TAU application" 2 1024 7 515.5 1048625
+"[GROUP=MIN_MARKER] Heap Free : .TAU application : .TAU application" 2 1024 7 515.5 1048625
+"[GROUP=MIN_MARKER] Heap Free" 2 1024 7 515.5 1048625
+"[GROUP=MIN_MARKER] Heap Free : .TAU application" 2 1024 7 515.5 1048625
+"[GROUP=MAX_MARKER] Heap Free : .TAU application" 1 67174400 67174400 67174400 4512400015360000
+"[GROUP=MAX_MARKER] Heap Free : .TAU application : .TAU application" 1 67174400 67174400 67174400 4512400015360000
+"[GROUP=MAX_MARKER] Heap Free" 1 67174400 67174400 67174400 4512400015360000
+"[GROUP=MAX_MARKER] Heap Free : .TAU application" 1 67174400 67174400 67174400 4512400015360000
+"Heap Memory Used (KB) at Entry : .TAU application => fclose()  " 4 268.59765625 1.109375 200.2666015625 213334.3534393311
+"Heap Free : .TAU application => fclose()  " 4 568 568 568 1290496
+"Heap Memory Used (KB) at Entry : fclose()   => void free(void*) C" 4 268.04296875 0.5546875 199.7119140625 212446.9011077881
+"Heap Memory Used (KB) at Exit : fclose()   => void free(void*) C" 4 268.04296875 0.5546875 199.7119140625 212446.9011077881
+"Heap Memory Used (KB) at Exit : .TAU application => fclose()  " 4 268.04296875 0.5546875 199.7119140625 212446.9011077881
+"Decrease in Heap Memory (KB) : .TAU application => fclose()  " 4 0.5546875 0.5546875 0.5546875 1.230712890625
+"[GROUP=MIN_MARKER] Decrease in Heap Memory (KB)" 1 0.5546875 0.5546875 0.5546875 0.30767822265625
+"[GROUP=MIN_MARKER] Decrease in Heap Memory (KB) : .TAU application => fclose()  " 1 0.5546875 0.5546875 0.5546875 0.30767822265625
+"Heap Memory Used (KB) at Entry : .TAU application => void * calloc(size_t, size_t) C" 2199 67425.7490234375 268.04296875 59161.61579126876 8750452952191.364
+"Heap Memory Used (KB) at Exit : .TAU application => void * calloc(size_t, size_t) C" 2199 67425.7490234375 268.04296875 59161.61579126876 8750452952191.364
+"[GROUP=MIN_MARKER] Heap Allocate" 1 7 7 7 49
+"[GROUP=MIN_MARKER] Heap Allocate : .TAU application" 1 7 7 7 49
+"Heap Memory Used (KB) at Entry : .TAU application => fwrite()  " 6 268.59765625 268.59765625 268.59765625 432868.205657959
+"Write Bandwidth (MB/s) <file=Ktemplate.hdr> : .TAU application => fwrite()  " 1 1.714285714285714 1.714285714285714 1.714285714285714 2.938775510204081
+"Write Bandwidth (MB/s) : .TAU application => fwrite()  " 1 1.714285714285714 1.714285714285714 1.714285714285714 2.938775510204081
+"Bytes Written <file=Ktemplate.hdr> : .TAU application => fwrite()  " 6 21 4 14 1382
+"Bytes Written : .TAU application => fwrite()  " 6 21 4 14 1382
+"Heap Memory Used (KB) at Exit : .TAU application => fwrite()  " 6 268.59765625 268.59765625 268.59765625 432868.205657959
+"Heap Memory Used (KB) at Entry : .TAU application => fprintf()  " 11 277.3876953125 268.59765625 269.3967507102273 798390.942940712
+"Write Bandwidth (MB/s) <file=Ktemplate.hdr> : .TAU application => fprintf()  " 7 25 7.5 17.85714285714286 2537.5
+"[GROUP=MAX_MARKER] Write Bandwidth (MB/s) <file=Ktemplate.hdr>" 2 25 15 20 850
+"[GROUP=MAX_MARKER] Write Bandwidth (MB/s) <file=Ktemplate.hdr> : .TAU application => fprintf()  " 2 25 15 20 850
+"Write Bandwidth (MB/s) : .TAU application => fprintf()  " 8 25 7.5 17.43055555555556 2746.141975308642
+"[GROUP=MAX_MARKER] Write Bandwidth (MB/s)" 2 25 15 20 850
+"[GROUP=MAX_MARKER] Write Bandwidth (MB/s) : .TAU application => fprintf()  " 2 25 15 20 850
+"Bytes Written <file=Ktemplate.hdr> : .TAU application => fprintf()  " 10 25 15 22 5050
+"Bytes Written : .TAU application => fprintf()  " 11 390 15 55.45454545454545 157150
+"Heap Memory Used (KB) at Exit : .TAU application => fprintf()  " 11 277.3876953125 268.59765625 269.3967507102273 798390.942940712
+"[GROUP=MIN_MARKER] Bytes Written <file=Ktemplate.hdr>" 1 4 4 4 16
+"[GROUP=MIN_MARKER] Bytes Written <file=Ktemplate.hdr> : .TAU application => fwrite()  " 1 4 4 4 16
+"[GROUP=MIN_MARKER] Bytes Written" 1 4 4 4 16
+"[GROUP=MIN_MARKER] Bytes Written : .TAU application => fwrite()  " 1 4 4 4 16
+"Write Bandwidth (MB/s) <file=stdout> : .TAU application => fprintf()  " 1 14.44444444444444 14.44444444444444 14.44444444444444 208.641975308642
+"Bytes Written <file=stdout> : .TAU application => fprintf()  " 1 390 390 390 152100
+"[GROUP=MAX_MARKER] Bytes Written" 1 390 390 390 152100
+"[GROUP=MAX_MARKER] Bytes Written : .TAU application => fprintf()  " 1 390 390 390 152100
+"Heap Memory Used (KB) at Exit : .TAU application" 1 277.3876953125 277.3876953125 277.3876953125 76943.93351078033
+"Decrease in Heap Memory (KB) : .TAU application" 1 507.0498046875 507.0498046875 507.0498046875 257099.5044336319
+"MEMORY LEAK! Heap Allocate : .TAU application" 244 9440 13 1164.118852459016 2623731385
+"[GROUP=MAX_MARKER] MEMORY LEAK! Heap Allocate : .TAU application" 2 9440 32 4736 89114624
+"[GROUP=MAX_MARKER] MEMORY LEAK! Heap Allocate : .TAU application : .TAU application" 2 9440 32 4736 89114624
