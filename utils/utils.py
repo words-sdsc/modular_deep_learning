@@ -4,7 +4,7 @@ import xml.etree.ElementTree as et
 import pandas as pd
 
 DIR = '../'
-profile_files = ["profile.0.0.0"]
+profile_files = ["profile.0.0.1"]
 #if len(sys.argv < 2): 
 #  profile_files = glob.glob(DIR + "profile.[0-9].*")
 #else:
@@ -24,6 +24,8 @@ def parse_profiles(profiles):
 
             dfs = []
             data = []
+            events = ['Bytes Written', 'Bytes Read', 'Read Bandwidth (MB/s)', 'Write Bandwidth (MB/s)', 'Increase in Heap Memory (KB)', 'Decrease in Heap Memory (KB)', 'Heap Memory Used (KB)']
+            event_names = ['Bytes Written (KB)', 'Bytes Read (KB)', 'Read Bandwidth (MB/s)', 'Write Bandwidth (MB/s)', 'Increase in Heap Memory (KB)', 'Decrease in Heap Memory (KB)', 'Heap Free', 'Heap Allocate', 'Heap Memory Used (KB)']
             for i,line in enumerate(profile):
                 # check for new section
                 if line[0] == '#': 
@@ -44,19 +46,15 @@ def parse_profiles(profiles):
             dfs.append(pd.DataFrame(data,columns=header))
             reduced_dfs = pd.DataFrame()
             for df in dfs:
-                if 'Name' in list(df):
+                if 'Name' in list(df): ##########
+                    print('ayoma')
                     reduced_df = df[df['Name']==".TAU application"]
+                    continue ## will delete
                 elif 'eventname' in list(df):
-                    reduced_df = df[df['eventname']=='Increase in Heap Memory (KB)']
+                    for i, e in enumerate(events):
+                        reduced_df[event_names[i]] = df[df['eventname']==e].to_json()
+                    #reduced_df = df[df['eventname']=='Increase in Heap Memory (KB)']
                     #reduced_df = pd.concat([reduced_df,df[df['eventname']=='Bytes Read'], df[df['eventname']=='Bytes Written'], df[df['eventname']=='Read Bandwidth (MB/s)'], df[df['eventname']=='Write Bandwidth (MB/s)']], axis=0)
-                    print('btes read')
-                    print(df[df['eventname']=='Bytes Read'])
-                    print('btes written')
-                    print(df[df['eventname']=='Bytes Written'])
-                    print('btes read bandiwdth')
-                    print(df[df['eventname']=='Read Bandwidth (MB/s)'])
-                    print('btes write bandwidth')
-                    print(df[df['eventname']=='Write Bandwidth (MB/s)'])
                 else:
                     continue
                 reduced_dfs = pd.concat([reduced_dfs.reset_index(drop=True),reduced_df.reset_index(drop=True)],axis=1)
